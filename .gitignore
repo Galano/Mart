@@ -1,0 +1,33 @@
+# ---------- segredos e configuracao local
+.env
+.env.*
+!.env.example
+
+# ---------- dados gerados em execucao (banco SQLite e arquivos enviados)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# ---------- Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.log
+
+# ---------- Node / frontend
+node_modules/
+frontend/dist/
+.vite/
+npm-debug.log*
+
+# ---------- editores e sistema
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini

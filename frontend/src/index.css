@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* Light frost B2B: tokens semanticos, com tema escuro */
+:root {
+  --bg: #f3f6fa;
+  --surface: #ffffff;
+  --surface-2: #f7f9fc;
+  --frost: rgba(255, 255, 255, 0.72);
+  --fg: #0f1b2d;
+  --muted: #5b6b82;
+  --line: #e2e8f0;
+  --primary: #2f5bea;
+  --primary-fg: #ffffff;
+  --primary-soft: #e8eefe;
+  --ok: #0f8a5f;
+  --ok-soft: #e3f6ee;
+  --warn: #b26a00;
+  --warn-soft: #fff4dc;
+  --danger: #c62f3b;
+  --danger-soft: #fde8ea;
+  --shadow: 0 1px 2px rgba(15, 27, 45, 0.04), 0 8px 24px -12px rgba(15, 27, 45, 0.12);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0c1220;
+    --surface: #131b2c;
+    --surface-2: #182236;
+    --frost: rgba(19, 27, 44, 0.75);
+    --fg: #e8edf6;
+    --muted: #93a1b8;
+    --line: #253049;
+    --primary: #6d8dff;
+    --primary-fg: #0c1220;
+    --primary-soft: #1d2a4d;
+    --ok: #3ccf93;
+    --ok-soft: #12342a;
+    --warn: #f0b04a;
+    --warn-soft: #3a2b10;
+    --danger: #ff6b76;
+    --danger-soft: #3d1a20;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px -12px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-frost: var(--frost);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-primary: var(--primary);
+  --color-primary-fg: var(--primary-fg);
+  --color-primary-soft: var(--primary-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
+  --shadow-frost: var(--shadow);
+}
+
+html, body, #root { min-height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { text-wrap: balance; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* camadas do estudio */
+.layer { touch-action: none; user-select: none; }
+.layer.sel { outline: 1.5px solid var(--primary); outline-offset: 1px; }
+.handle { width: 14px; height: 14px; border-radius: 50%; background: var(--primary); border: 2px solid #fff; position: absolute; right: -7px; bottom: -7px; cursor: nwse-resize; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
